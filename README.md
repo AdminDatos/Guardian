@@ -1,2 +1,2 @@
 # Guardian
-Repositorio para proyecto Guardian vigilancia de precio de medicamentos
+Repositorio para proyecto Guardian control de precios de medicamentos
