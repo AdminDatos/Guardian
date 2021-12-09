@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 Directorio=r'"direcorio"' #DIRECTORIO LOCAL CON LAS FACTURAS EN PDF
 Directorio_Output=r'"direcorio"' #DIRECTORIO LOCAL EN EL QUE SE GUARDARÁN LOS ARCHIVOS PROCESADOS 
