@@ -1,3 +1,3 @@
-#PRE-PROCESAMIENTO
+# PRE-PROCESAMIENTO
 
 Esta función realiza el pre-procesamiento de las facturas, transformandolas de archivo ".pdf" a ".jpg" con las condiciones necesarias para entrenamiento y extracción.
