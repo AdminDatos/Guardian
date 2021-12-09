@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 #LECTURA INICIAL DE LAS TABLAS QUE VAN A SER UTILIZADAS DE SYNAPSE
 
