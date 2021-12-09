@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 def runAnalysis(input_file, output_file, file_type): 
       headers = {
