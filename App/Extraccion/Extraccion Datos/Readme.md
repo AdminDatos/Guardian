@@ -2,6 +2,8 @@
 
 Esta es la función con la cual se consume el servicio de FormRecognizer, se extrae la información y se consolida en archivos ".json"
 
+# Parametros
+
 El input_file debe ser tipo ".jpg" con la máxima resolución y escala de grises.
 
 El output_file es de tipo ".json"
