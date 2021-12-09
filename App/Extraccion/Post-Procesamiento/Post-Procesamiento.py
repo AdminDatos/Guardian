@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-#FUNCION QUE TOMA LA INFORMACION DEL JSON Y LA ESTRUCTURA EN UN FORMATO PARQUET PARA CARGARLA AL SYNAPSE
-
 def lectura(JSON,factura,pag):
     listaFactura=[]
  
