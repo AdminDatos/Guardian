@@ -1,0 +1,615 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "es-CO",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/ServidorSynapse;DatabaseSynapse",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "ServidorSynapse",
+            "database": "DatabaseSynapse"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "ServidorSynapse;DatabaseSynapse",
+          "Username": "UsuarioSynapse",
+          "EncryptConnection": true
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Cliente",
+        "columns": [
+          {
+            "name": "IdDimCliente",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimCliente"
+          },
+          {
+            "name": "Nit",
+            "dataType": "string",
+            "sourceColumn": "Nit"
+          },
+          {
+            "name": "Razon Social",
+            "dataType": "string",
+            "sourceColumn": "RazonSocial"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwDimCliente = Source{[Schema=\"IM\",Item=\"VwDimCliente\"]}[Data]",
+                "in",
+                "    IM_VwDimCliente"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Entidad",
+        "columns": [
+          {
+            "name": "IdDimEntidad",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimEntidad"
+          },
+          {
+            "name": "Nit",
+            "dataType": "string",
+            "sourceColumn": "Nit"
+          },
+          {
+            "name": "Razon Social",
+            "dataType": "string",
+            "sourceColumn": "RazonSocial"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwDimEntidad = Source{[Schema=\"IM\",Item=\"VwDimEntidad\"]}[Data]",
+                "in",
+                "    IM_VwDimEntidad"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Facturas",
+        "columns": [
+          {
+            "name": "IdDimEntidad",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimEntidad"
+          },
+          {
+            "name": "IdDimCliente",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimCliente"
+          },
+          {
+            "name": "IdDimMedicamento",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimMedicamento"
+          },
+          {
+            "name": "IdDimFechaFactura",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "IdDimFechaFactura"
+          },
+          {
+            "name": "IdDimFactura",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimFactura"
+          },
+          {
+            "name": "CodigoFactura",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CodigoFactura"
+          },
+          {
+            "name": "CantidadProductosFuente",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CantidadProductosFuente"
+          },
+          {
+            "name": "PrecioUnidadFuente",
+            "dataType": "decimal",
+            "isHidden": true,
+            "sourceColumn": "PrecioUnidadFuente"
+          },
+          {
+            "name": "ValorDescuentoFuente",
+            "dataType": "decimal",
+            "isHidden": true,
+            "sourceColumn": "ValorDescuentoFuente"
+          },
+          {
+            "name": "PrecioTotalFuente",
+            "dataType": "decimal",
+            "isHidden": true,
+            "sourceColumn": "PrecioTotalFuente"
+          },
+          {
+            "name": "DiferenciaPrecioCircularFuente",
+            "dataType": "decimal",
+            "isHidden": true,
+            "sourceColumn": "DiferenciaPrecioCircularFuente"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwFactFacturas = Source{[Schema=\"IM\",Item=\"VwFactFacturas\"]}[Data]",
+                "in",
+                "    IM_VwFactFacturas"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Cantidad Facturas",
+            "expression": " DISTINCTCOUNT('Facturas'[CodigoFactura])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Cantidad Productos",
+            "expression": " SUM('Facturas'[CantidadProductosFuente])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Precio Unidad",
+            "expression": " SUM('Facturas'[PrecioUnidadFuente])",
+            "formatString": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"9226\" DisplayName=\"$ Espa�ol (Colombia)\" Symbol=\"$\" PositivePattern=\"2\" NegativePattern=\"9\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Valor Descuento",
+            "expression": " SUM('Facturas'[ValorDescuentoFuente])",
+            "formatString": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"9226\" DisplayName=\"$ Espa�ol (Colombia)\" Symbol=\"$\" PositivePattern=\"2\" NegativePattern=\"9\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Precio Total",
+            "expression": " SUM('Facturas'[PrecioTotalFuente])",
+            "formatString": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"9226\" DisplayName=\"$ Espa�ol (Colombia)\" Symbol=\"$\" PositivePattern=\"2\" NegativePattern=\"9\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Diferencia Precio Circular",
+            "expression": " SUM('Facturas'[DiferenciaPrecioCircularFuente])",
+            "formatString": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"9226\" DisplayName=\"$ Espa�ol (Colombia)\" Symbol=\"$\" PositivePattern=\"2\" NegativePattern=\"9\" /></Format>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medicamento",
+        "columns": [
+          {
+            "name": "IdDimMedicamento",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimMedicamento"
+          },
+          {
+            "name": "CUM",
+            "dataType": "string",
+            "sourceColumn": "CUM"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre"
+          },
+          {
+            "name": "Precio",
+            "dataType": "decimal",
+            "sourceColumn": "Precio"
+          },
+          {
+            "name": "Circular",
+            "dataType": "string",
+            "sourceColumn": "Circular"
+          },
+          {
+            "name": "Tipo Precio",
+            "dataType": "string",
+            "sourceColumn": "TipoPrecio"
+          },
+          {
+            "name": "Fecha Inicio Circular",
+            "dataType": "dateTime",
+            "sourceColumn": "FechaInicioCircular"
+          },
+          {
+            "name": "Fecha Fin Circular",
+            "dataType": "dateTime",
+            "sourceColumn": "FechaFinCircular"
+          },
+          {
+            "name": "Codigo Es Circular Actual",
+            "dataType": "boolean",
+            "sourceColumn": "CodigoEsCircularActual",
+            "displayFolder": "Codigos"
+          },
+          {
+            "name": "Es Circular Actual",
+            "dataType": "string",
+            "sourceColumn": "EsCircularActual"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwDimMedicamento = Source{[Schema=\"IM\",Item=\"VwDimMedicamento\"]}[Data]",
+                "in",
+                "    IM_VwDimMedicamento"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Factura",
+        "columns": [
+          {
+            "name": "IdDimFactura",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IdDimFactura"
+          },
+          {
+            "name": "Numero Factura",
+            "dataType": "string",
+            "sourceColumn": "NumeroFactura"
+          },
+          {
+            "name": "Codigo Cumple Precio Circular",
+            "dataType": "boolean",
+            "sourceColumn": "CodigoCumplePrecioCircular",
+            "displayFolder": "Codigos"
+          },
+          {
+            "name": "Cumple Precio Circular",
+            "dataType": "string",
+            "sourceColumn": "CumplePrecioCircular"
+          },
+          {
+            "name": "Es Medicamento Regulado",
+            "dataType": "string",
+            "sourceColumn": "EsMedicamentoRegulado"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwDimFactura = Source{[Schema=\"IM\",Item=\"VwDimFactura\"]}[Data]",
+                "in",
+                "    IM_VwDimFactura"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fecha Factura",
+        "columns": [
+          {
+            "name": "IdDimFecha",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "IdDimFecha"
+          },
+          {
+            "name": "Fecha Factura",
+            "dataType": "dateTime",
+            "sourceColumn": "Fecha"
+          },
+          {
+            "name": "CodigoEsDiaNoHabil",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CodigoEsDiaNoHabil"
+          },
+          {
+            "name": "Es Dia No Habil",
+            "dataType": "string",
+            "sourceColumn": "EsDiaNoHabil"
+          },
+          {
+            "name": "CodigoEsFestivo",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "CodigoEsFestivo"
+          },
+          {
+            "name": "Es Festivo",
+            "dataType": "string",
+            "sourceColumn": "EsFestivo"
+          },
+          {
+            "name": "Festivo",
+            "dataType": "string",
+            "sourceColumn": "Festivo"
+          },
+          {
+            "name": "A�o",
+            "dataType": "string",
+            "sourceColumn": "A�o"
+          },
+          {
+            "name": "SemestreNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SemestreNumero"
+          },
+          {
+            "name": "Semestre",
+            "dataType": "string",
+            "sourceColumn": "SemestreNombre",
+            "sortByColumn": "SemestreNumero"
+          },
+          {
+            "name": "TrimesteNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "TrimesteNumero"
+          },
+          {
+            "name": "Trimeste",
+            "dataType": "string",
+            "sourceColumn": "TrimesteNombre",
+            "sortByColumn": "TrimesteNumero"
+          },
+          {
+            "name": "MesNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "MesNumero"
+          },
+          {
+            "name": "Mes",
+            "dataType": "string",
+            "sourceColumn": "MesNombre",
+            "sortByColumn": "MesNumero"
+          },
+          {
+            "name": "SemanaNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SemanaNumero"
+          },
+          {
+            "name": "Semana",
+            "dataType": "string",
+            "sourceColumn": "SemanaNombre",
+            "sortByColumn": "SemanaNumero"
+          },
+          {
+            "name": "Dia",
+            "dataType": "string",
+            "sourceColumn": "Dia"
+          },
+          {
+            "name": "DiaSemanaNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DiaSemanaNumero"
+          },
+          {
+            "name": "DiaSemana",
+            "dataType": "string",
+            "sourceColumn": "DiaSemanaNombre",
+            "sortByColumn": "DiaSemanaNumero"
+          },
+          {
+            "name": "InicioSemana",
+            "dataType": "string",
+            "sourceColumn": "InicioSemanaNombre"
+          },
+          {
+            "name": "QuincenaNumero",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "QuincenaNumero"
+          },
+          {
+            "name": "Quincena",
+            "dataType": "string",
+            "sourceColumn": "QuincenaNombre"
+          },
+          {
+            "name": "Cuatrienio Gobierno",
+            "dataType": "string",
+            "sourceColumn": "CuatrienioGobierno"
+          },
+          {
+            "name": "Cuatrienio",
+            "dataType": "string",
+            "sourceColumn": "Cuatrienio"
+          },
+          {
+            "name": "Decada",
+            "dataType": "string",
+            "sourceColumn": "Decada"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/syn-sic-guardian sql azuresynapse net;syndwsicguardian\",",
+                "    IM_VwDimFechaFactura = Source{[Schema=\"IM\",Item=\"VwDimFechaFactura\"]}[Data]",
+                "in",
+                "    IM_VwDimFechaFactura"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "A�os",
+            "levels": [
+              {
+                "name": "A�o",
+                "ordinal": 0,
+                "column": "A�o"
+              },
+              {
+                "name": "Semestre",
+                "ordinal": 1,
+                "column": "Semestre"
+              },
+              {
+                "name": "Trimeste",
+                "ordinal": 2,
+                "column": "Trimeste"
+              },
+              {
+                "name": "Mes",
+                "ordinal": 3,
+                "column": "Mes"
+              },
+              {
+                "name": "Fecha Factura",
+                "ordinal": 4,
+                "column": "Fecha Factura"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "71298cce-c512-465a-ae73-4b55b658a767",
+        "fromTable": "Facturas",
+        "fromColumn": "IdDimEntidad",
+        "toTable": "Entidad",
+        "toColumn": "IdDimEntidad"
+      },
+      {
+        "name": "2a7e394f-a137-4ab9-8981-6a8a32dcaba1",
+        "fromTable": "Facturas",
+        "fromColumn": "IdDimCliente",
+        "toTable": "Cliente",
+        "toColumn": "IdDimCliente"
+      },
+      {
+        "name": "8be9fcb9-35e8-4517-86a5-71a8d1a462b4",
+        "fromTable": "Facturas",
+        "fromColumn": "IdDimMedicamento",
+        "toTable": "Medicamento",
+        "toColumn": "IdDimMedicamento"
+      },
+      {
+        "name": "61ecb820-1574-4292-8d2a-cf3e4c71a635",
+        "fromTable": "Facturas",
+        "fromColumn": "IdDimFactura",
+        "toTable": "Factura",
+        "toColumn": "IdDimFactura"
+      },
+      {
+        "name": "fc1a3013-e6e6-4ef6-8fbb-dd7d72da7927",
+        "fromTable": "Facturas",
+        "fromColumn": "IdDimFechaFactura",
+        "toTable": "Fecha Factura",
+        "toColumn": "IdDimFecha"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Admin",
+        "modelPermission": "administrator"
+      },
+      {
+        "name": "Lectura",
+        "modelPermission": "read"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
