@@ -56,21 +56,21 @@ se cambia el proceso con la ayuda de herramientas de analítica
 
 1. Fuentes de información:
 
-• Revisar posibilidad de acceder a SISMED mediante servicios y traer información
-directamente del sistema, lo cual permitiría aumentar la cantidad de medicamentos
-inspeccionados
+   • Revisar posibilidad de acceder a SISMED mediante servicios y traer información
+   directamente del sistema, lo cual permitiría aumentar la cantidad de medicamentos
+   inspeccionados
 
-• Acceder a facturas mediante sistemas interoperabilidad con los actores del mercado
-a los cuales pedimos facturas
+   • Acceder a facturas mediante sistemas interoperabilidad con los actores del mercado
+   a los cuales pedimos facturas
 
 2. Inspección de precios:
 
-• La revisión de precios en SISMED se puede hacer automáticamente si logramos
-interoperabilidad con SISMED y con software que optimice el proceso
+   • La revisión de precios en SISMED se puede hacer automáticamente si logramos
+   interoperabilidad con SISMED y con software que optimice el proceso
 
-• La revisión de las facturas se puede mejorar con herramientas de analítica para
-procesar un número mucho mayor mediante componentes para análisis de imágenes
-y texto
+   • La revisión de las facturas se puede mejorar con herramientas de analítica para
+   procesar un número mucho mayor mediante componentes para análisis de imágenes
+   y texto
 
 # BENEFICIOS 
 
