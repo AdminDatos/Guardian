@@ -17,6 +17,93 @@ comercialización u otras formas de intermediación de medicamentos, dispositivo
 médicos o bienes del sector salud, cuando infrinjan el régimen aplicable al control de
 precios de medicamentos o dispositivos médicos.
 
+La Superintendencia de Industria y Comercio tiene asignada la competencia de
+inspección, vigilancia y control del cumplimiento de los regímenes de control de
+precios establecidos para los siguientes productos:
+
+✓ Agroquímicos: según las disposiciones del Ministerio de Agricultura y Desarrollo
+Rural bajo el régimen de libertad vigilada (reporte de precios).
+✓ Compra de leche cruda: según las disposiciones del Ministerio de Agricultura y
+Desarrollo Rural bajo el régimen de libertad regulada (todas las personas naturales o
+jurídicas que adquieran leche cruda con fines industriales o comerciales deben
+aplicar el sistema de pago establecido por el Gobierno Nacional).
+✓ Medicamentos y dispositivos médicos: según las disposiciones del Ministerio de
+Salud y Protección Social bajo dos (2) regímenes: (i) libertad vigilada (reporte de
+precios) y (ii) Control Directo (precio máximo).
+
+# PROBLEMATICA
+
+La inspección, vigilancia y control se realizan actualmente mediante un proceso de
+análisis y comparaciones realizados por los expertos de la delegatura de metrología de
+la SIC en forma manual y puntual:
+SISMED
+
+Este proceso tiene posibilidades de mejora:
+
+1) La cantidad de medicamentos que se pueden vigilar esta limitada por la capacidad
+de los expertos que revisan en SISMED
+2) La cantidad de facturas que se pueden revisar se reduce a las que se piden cuando
+se encuentra una alerta, y en la cantidad que pueden revisar los expertos de la
+delegatura de forma manual
+3) La cantidad de información disponible para revisar puede aumentar notoriamente si
+se cambia el proceso con la ayuda de herramientas de analítica
+
+# POSIBILIDADES DE MEJORA
+
+1. Fuentes de información:
+
+• Revisar posibilidad de acceder a SISMED mediante servicios y traer información
+directamente del sistema, lo cual permitiría aumentar la cantidad de medicamentos
+inspeccionados
+• Acceder a facturas mediante sistemas interoperabilidad con los actores del mercado
+a los cuales pedimos facturas
+
+2. Inspección de precios:
+
+• La revisión de precios en SISMED se puede hacer automáticamente si logramos
+interoperabilidad con SISMED y con software que optimice el proceso
+• La revisión de las facturas se puede mejorar con herramientas de analítica para
+procesar un número mucho mayor mediante componentes para análisis de imágenes
+y texto
+
+# BENEFICIOS 
+
+1) Mayor capacidad y rigurosidad en el proceso de vigilancia de precios de
+medicamentos controlados realizado por la delegatura de metrología de la SIC.
+
+2) Dará más herramientas a la entidad para encontrar los infractores, y por tanto,
+beneficio al país en sus sistema de salud y sus finanzas debido al control mas
+riguroso de los precios.
+
+3) Se demostrará que el proceso puede ser optimizado y así se convertirá en una
+caso de éxito para buscar alternativas de mejora en otros procesos de la
+entidad y del país.
+
+# EQUIPO DE TRABAJO
+
+• Líder del proyecto: Javier Andres Arias Sanabria – Ing. Sistemas, Magister tecnología, Certificado Big Data, PMP
+
+• Científico de datos: Fredy Gomez – Ing. Sistemas, especialista en Explotación de Datos y Descubrimiento de 
+conocimiento, experiencia en herramientas Microsoft, curso en programación estadística con R
+
+• Ingeniero de Datos: William Enciso – Ing. Sistemas, certificado como: Ing. Datos Asociado de Azure, Analista de 
+datos de Microsoft, y en Fundamentos de Datos con Azure
+
+• Analistas de datos: 1) Mónica Marquinez – Ing. Industrial con amplio conocimiento del proceso de vigilancia de los 
+precios de medicamentos 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
+
+• Artista de datos: Jhefferson Mora – Ing. Sistemas, Especialista en Inteligencia de Negocios, Cursos en Phyton
+• Estadístico: 1) Daniela López – Economista con experiencia en medición e interpretación de datos estadísticos y 
+metodologías cuantitativas. 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
+
+• Administrador de bases de datos: Diego Angarita – Ing. Sistemas, Magister en Tecnología, Especialista en BI. En 
+este rol también se tendrá el apoyo del DBA que presta servicios para la SIC a través de los servicios contratados 
+con CARVAJAL.
+
+• Rol Adicional: Product Owner
+
+- Francisco Andres Rodríguez Erazo – Jefe de la Oficina de Tecnología e Informática
+- Luis Fernando López – Coordinador Delegatura de Metrología
 
 # CONTENIDO DEL REPOSITORIO
 
