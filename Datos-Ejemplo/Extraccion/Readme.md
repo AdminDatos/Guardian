@@ -1,4 +1,4 @@
-# ARCHIVOS EXTRAIDOS
+# ARCHIVOS EXTRACCIÓN
 
 En la carpeta "Facturas" se encuentran los archivos en formato ".jpg" que corresponden a las facturas listas para ser procesadas
 
