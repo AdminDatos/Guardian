@@ -23,10 +23,12 @@ precios establecidos para los siguientes productos:
 
 ✓ Agroquímicos: según las disposiciones del Ministerio de Agricultura y Desarrollo
 Rural bajo el régimen de libertad vigilada (reporte de precios).
+
 ✓ Compra de leche cruda: según las disposiciones del Ministerio de Agricultura y
 Desarrollo Rural bajo el régimen de libertad regulada (todas las personas naturales o
 jurídicas que adquieran leche cruda con fines industriales o comerciales deben
 aplicar el sistema de pago establecido por el Gobierno Nacional).
+
 ✓ Medicamentos y dispositivos médicos: según las disposiciones del Ministerio de
 Salud y Protección Social bajo dos (2) regímenes: (i) libertad vigilada (reporte de
 precios) y (ii) Control Directo (precio máximo).
@@ -40,12 +42,14 @@ SISMED
 
 Este proceso tiene posibilidades de mejora:
 
-1) La cantidad de medicamentos que se pueden vigilar esta limitada por la capacidad
+1. La cantidad de medicamentos que se pueden vigilar esta limitada por la capacidad
 de los expertos que revisan en SISMED
-2) La cantidad de facturas que se pueden revisar se reduce a las que se piden cuando
+
+2. La cantidad de facturas que se pueden revisar se reduce a las que se piden cuando
 se encuentra una alerta, y en la cantidad que pueden revisar los expertos de la
 delegatura de forma manual
-3) La cantidad de información disponible para revisar puede aumentar notoriamente si
+
+3. La cantidad de información disponible para revisar puede aumentar notoriamente si
 se cambia el proceso con la ayuda de herramientas de analítica
 
 # POSIBILIDADES DE MEJORA
@@ -55,6 +59,7 @@ se cambia el proceso con la ayuda de herramientas de analítica
 • Revisar posibilidad de acceder a SISMED mediante servicios y traer información
 directamente del sistema, lo cual permitiría aumentar la cantidad de medicamentos
 inspeccionados
+
 • Acceder a facturas mediante sistemas interoperabilidad con los actores del mercado
 a los cuales pedimos facturas
 
@@ -62,6 +67,7 @@ a los cuales pedimos facturas
 
 • La revisión de precios en SISMED se puede hacer automáticamente si logramos
 interoperabilidad con SISMED y con software que optimice el proceso
+
 • La revisión de las facturas se puede mejorar con herramientas de analítica para
 procesar un número mucho mayor mediante componentes para análisis de imágenes
 y texto
@@ -93,6 +99,7 @@ datos de Microsoft, y en Fundamentos de Datos con Azure
 precios de medicamentos 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
 
 • Artista de datos: Jhefferson Mora – Ing. Sistemas, Especialista en Inteligencia de Negocios, Cursos en Phyton
+
 • Estadístico: 1) Daniela López – Economista con experiencia en medición e interpretación de datos estadísticos y 
 metodologías cuantitativas. 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
 
