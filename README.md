@@ -114,10 +114,48 @@ con CARVAJAL.
 
 # CONTENIDO DEL REPOSITORIO
 
-   [App](https://github.com/AdminDatos/Guardian/tree/main/App): Contiene la información y los archivos con los cuales se desarrollo el proyecto.
+   1. [App](https://github.com/AdminDatos/Guardian/tree/main/App): Contiene los archivos con los cuales se desarrollo el proyecto.
+   
+      • [CargaDatos](https://github.com/AdminDatos/Guardian/tree/main/App/CargaDatos): Esta funcion es la encargada de ajustar los formatos de cada uno de los campos de acuerdo          a lo definido en el modelo de datos y de realizar el cargue al synapse.
+      
+      • [Entrenamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Entrenamiento): El entrenamiento de los modelos se realiza en la página de la api de FormRecognizer,          se adjunta un modelo de ejemplo.
+      
+      • [Extracción](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion): El proceso de extracción se divide en 2 partes:
+         
+         • [Extracción Datos](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Extraccion%20Datos): Esta es la función con la cual se consume el servicio de                  FormRecognizer, se extrae la información y se consolida en archivos ".json".
+         
+         • [Post-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Post-Procesamiento): Funcion que toma la información del archivo ".json"                     consolidado en la primera parte de la extracción, realiza algunos cálculos y ajustes, y la estructura en un formato parquet para que pueda ser cargada al synapse.
+         
+      • [Pre-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Pre-Procesamiento): Esta función realiza el pre-procesamiento de las facturas, transformandolas          de archivo ".pdf" a ".jpg" con las condiciones necesarias para entrenamiento y extracción.
+      
+      • [Visualizacion de los Datos](https://github.com/AdminDatos/Guardian/tree/main/App/VisualizacionDatos): El proceso de visualizacion de los datos se dividio en 2 partes:
+      
+         • [Esquema Base de Datos](https://github.com/AdminDatos/Guardian/tree/main/App/VisualizacionDatos/Esquema%20Base%20de%20Datos): Archivos de creación en lenguaje "tsql"             de cada una de los objetos de la bodega de datos (tablas, vistas, procedimientos almacenados y funciones).
+         
+         • [Modelado Tabular](https://github.com/AdminDatos/Guardian/tree/main/App/VisualizacionDatos/Modelado%20Tabular): Proyecto de Visual Studio que contiene el modelo                  tabular (cubo) y que a su vez consume información de la bodega de datos.
 
-   [Datos-Ejemplo](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo): Contiene archivos de ejemplo para cada uno de los componentes de la App
+   2. [Datos-Ejemplo](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo): Contiene archivos de ejemplo para cada uno de los componentes de la App.
 
-   [Documentacion](https://github.com/AdminDatos/Guardian/tree/main/Documentacion): Contiene los documentos relacionados con el proyecto.
+      • [CargaDatos](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/CargaDatos): Se encuentran los archivos en formato ".parquet" obtenidos del post-                      procesamiento y los cuales son recibidos por la función "Carga de Datos"
+      
+      • [Entrenamiento](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Entrenamiento): Se encuentran los archivos en formato ".jpg" que deben ser cargados en la          página de la api de FormRecognizer para el entrenamiento de los modelos.
+      
+      • [Extracción](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Extraccion): 
+         
+        • En la carpeta [Facturas](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Extraccion/Facturas): se encuentran los archivos en formato ".jpg" que                   corresponden a las facturas listas para ser procesadas
 
+        • En la carpeta [JSON](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Extraccion/JSON) se encuentran los archivos extraídos por el FormRecognizer y que a            su vez son recibidos por la función "post-procesamiento"
+
+        • En la carpeta [Parquet](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Extraccion/Parquet) se encuentran los archivos obtenidos luego del post-                    procesamiento.
+
+      • [Pre-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/Pre-Procesamiento): Archivos en formato ".pdf" que corresponden a las facturas médicas         que van a ser procesadas y que son recibidas por la función "Pre-Procesamiento".
+      
+      • [Visualizacion de los Datos](https://github.com/AdminDatos/Guardian/tree/main/Datos-Ejemplo/VisualizacionDatos): Archivo en formato ".pbix" el cual contiene el tablero           de control con los indicadores requeridos para el proyecto, y que a su vez consume la información del modelo tabular.
+         
+   3. [Documentacion](https://github.com/AdminDatos/Guardian/tree/main/Documentacion): Contiene los documentos relacionados con el proyecto.
+   
+      • En el archivo "Documentacion Data Sandbox - Guardian" se encuentran los detalles técnicos de la app y del proyecto en general.
+
+      • En el archivo "SIC - Proyecto_Piloto_DataSandbox Guardian" se encuentra la información general del proyecto.
+      
 
