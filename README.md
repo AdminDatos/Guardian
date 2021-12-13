@@ -122,9 +122,9 @@ con CARVAJAL.
       
       • [Extracción](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion): El proceso de extracción se divide en 2 partes:
          
-            • [Extracción Datos](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Extraccion%20Datos): Esta es la función con la cual se consume el servicio de                  FormRecognizer, se extrae la información y se consolida en archivos ".json".
+           • [Extracción Datos](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Extraccion%20Datos): Esta es la función con la cual se consume el servicio de                  FormRecognizer, se extrae la información y se consolida en archivos ".json".
 
-            • [Post-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Post-Procesamiento): Funcion que toma la información del archivo ".json"                     consolidado en la primera parte de la extracción, realiza algunos cálculos y ajustes, y la estructura en un formato parquet para que pueda ser cargada al synapse.
+           • [Post-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Extraccion/Post-Procesamiento): Funcion que toma la información del archivo ".json"                     consolidado en la primera parte de la extracción, realiza algunos cálculos y ajustes, y la estructura en un formato parquet para que pueda ser cargada al synapse.
          
       • [Pre-Procesamiento](https://github.com/AdminDatos/Guardian/tree/main/App/Pre-Procesamiento): Esta función realiza el pre-procesamiento de las facturas, transformandolas          de archivo ".pdf" a ".jpg" con las condiciones necesarias para entrenamiento y extracción.
       
