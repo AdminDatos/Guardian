@@ -87,30 +87,17 @@ entidad y del país.
 
 # EQUIPO DE TRABAJO
 
+• Product Owner: Francisco Andres Rodríguez Erazo – Jefe de la Oficina de Tecnología e Informática
+
 • Líder del proyecto: Javier Andres Arias Sanabria – Ing. Sistemas, Magister tecnología, Certificado Big Data, PMP
 
-• Científico de datos: Fredy Gomez – Ing. Sistemas, especialista en Explotación de Datos y Descubrimiento de 
-conocimiento, experiencia en herramientas Microsoft, curso en programación estadística con R
+• Ingeniero de Datos: William Enciso – Ing. Sistemas, certificado como: Ing. Datos Asociado de Azure, Analista de datos de Microsoft, y en Fundamentos de Datos con Azure
 
-• Ingeniero de Datos: William Enciso – Ing. Sistemas, certificado como: Ing. Datos Asociado de Azure, Analista de 
-datos de Microsoft, y en Fundamentos de Datos con Azure
+• Analistas de datos: 1) Mónica Marquinez – Ing. Industrial con amplio conocimiento del proceso de vigilancia de los precios de medicamentos. 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
 
-• Analistas de datos: 1) Mónica Marquinez – Ing. Industrial con amplio conocimiento del proceso de vigilancia de los 
-precios de medicamentos 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
+• Estadístico: 1) Julián Zabala – Ing. Industrial experto en programación en Phyton
 
-• Artista de datos: Jhefferson Mora – Ing. Sistemas, Especialista en Inteligencia de Negocios, Cursos en Phyton
-
-• Estadístico: 1) Daniela López – Economista con experiencia en medición e interpretación de datos estadísticos y 
-metodologías cuantitativas. 2) Julián Zabala – Ing. Industrial experto en programación en Phyton
-
-• Administrador de bases de datos: Diego Angarita – Ing. Sistemas, Magister en Tecnología, Especialista en BI. En 
-este rol también se tendrá el apoyo del DBA que presta servicios para la SIC a través de los servicios contratados 
-con CARVAJAL.
-
-• Rol Adicional: Product Owner
-
-- Francisco Andres Rodríguez Erazo – Jefe de la Oficina de Tecnología e Informática
-- Luis Fernando López – Coordinador Delegatura de Metrología
+• Administrador de bases de datos: Diego Angarita – Ing. Sistemas, Magister en Tecnología, Especialista en BI. En este rol también se tendrá el apoyo del DBA que presta servicios para la SIC a través de los servicios contratados con CARVAJAL.
 
 # CONTENIDO DEL REPOSITORIO
 
